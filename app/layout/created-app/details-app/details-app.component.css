@@ -1,0 +1,19 @@
+.card {
+    width: 100%;
+}
+
+.app-icon {
+    width: 25%;
+}
+
+.unread {
+    color: #fff;
+    font-size: 13;
+    border-radius: 50%;
+    background-color: #cb202d;
+    padding: 2;
+    width: 25;
+    height: 25;
+    text-align: center;
+    line-height: 30;
+}

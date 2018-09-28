@@ -1,0 +1,13 @@
+.unread {
+    color: #fff;
+    font-size: 8;
+    border-radius: 50%;
+    background-color: #cb202d;
+    padding: 2;
+    width: 15;
+    height: 15;
+}
+
+.noti .unread {
+    bottom: -10;
+}

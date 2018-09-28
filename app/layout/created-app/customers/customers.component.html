@@ -1,0 +1,27 @@
+<StackLayout class="full-dashboard">
+    <Label color="#021733" fontSize="15" textAlignment="center" text="Customer List"></Label>
+    <StackLayout width="100%" textAlignment="left" class="hr-light pading-gap m-b-10 m-t-10"></StackLayout>
+    <StackLayout class="m-t-30" *ngIf="visible_key">
+        <StackLayout *ngIf="customer_list.length>0">
+            <StackLayout *ngFor="let customer of customer_list" class="list-group">
+                <CardView class="whiteCard action-section">
+                    <GridLayout rows="auto, auto" columns="auto, *, auto" class="list-group-item" padding="10" verticalAlignment="center">
+                        <Image row="0" col="0" rowSpan="2" src="~/images/user.png" class="thumb" verticalAlignment="center"></Image>
+                        <Label fontSize="12" row="0" col="1" [text]="customer.customer.customer_name" verticalAlignment="center"></Label>
+                        <Label fontSize="10" row="1" col="1" [text]="customer.customer.email" class="body" verticalAlignment="center"></Label>
+                        <Label fontSize="10" row="0" col="2" [text]="customer.customer.contact_no" class="body" verticalAlignment="center"></Label>
+                    </GridLayout>
+                </CardView>
+            </StackLayout>
+        </StackLayout>
+        <StackLayout *ngIf="customer_list.length==0">
+            <StackLayout borderWidth="1" borderColor="#ccc" style="margin-bottom: 5px;" class="list-group">
+                <CardView class="whiteCard">
+                    <GridLayout rows="auto" columns="*" class="list-group-item" padding="10" verticalAlignment="center">
+                        <Label row="0" col="0" text="You are yet to have customers" verticalAlignment="center"></Label>
+                    </GridLayout>
+                </CardView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>

@@ -1,0 +1,20 @@
+.action-image {
+    border-radius: 50%;
+    background-color: #dedede;
+}
+
+.action-label {
+    color: #fff;
+    font-size: 18;
+    font-weight: 500;
+}
+
+.logout-label {
+    color: #fff;
+    font-size: 18;
+}
+
+.cart-label {
+    color: #fff;
+    font-size: 18;
+}
