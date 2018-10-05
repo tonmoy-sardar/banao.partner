@@ -26,7 +26,7 @@
                             </StackLayout>
                         </CardView>
                     </StackLayout>
-                    <StackLayout class="action-section sec_col" padding="2" row="0" col="1">
+                    <StackLayout class="action-section sec_col" *ngIf="serviceType ==1" padding="2" row="0" col="1">
                         <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'products']" VerticalAlignment="middle">
                             <StackLayout paddingTop="20">
                                 <Label class="fa fa-folder-open icon-st" [text]="'fa-folder-open' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
@@ -35,7 +35,7 @@
                             </StackLayout>
                         </CardView>
                     </StackLayout>
-                    <StackLayout class="action-section sec_col" padding="2" row="1" col="0">
+                    <StackLayout class="action-section sec_col" *ngIf="serviceType ==2" padding="2" row="0" col="1">
                         <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'products']" VerticalAlignment="middle">
                             <StackLayout paddingTop="20">
                                 <Label class="fa fa-briefcase icon-st" [text]="'fa-briefcase' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
@@ -44,7 +44,7 @@
                             </StackLayout>
                         </CardView>
                     </StackLayout>
-                    <StackLayout class="action-section sec_col" padding="2" row="1" col="1">
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="0">
                         <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-owner-info']" VerticalAlignment="middle">
                             <StackLayout paddingTop="20">
                                 <Label class="fa fa-user icon-st" [text]="'fa-user' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
@@ -53,7 +53,7 @@
                             </StackLayout>
                         </CardView>
                     </StackLayout>
-                    <StackLayout class="action-section sec_col" padding="2" row="2" col="0">
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="1">
                         <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-business-images']" VerticalAlignment="middle">
                             <StackLayout paddingTop="20">
                                 <Label class="fa fa-file-image-o icon-st" [text]="'fa-file-image-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
@@ -62,7 +62,7 @@
                             </StackLayout>
                         </CardView>
                     </StackLayout>
-                    <StackLayout class="action-section sec_col" padding="2" row="2" col="1">
+                    <StackLayout class="action-section sec_col" padding="2" row="2" col="0">
                         <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-social-media']" VerticalAlignment="middle">
                             <StackLayout paddingTop="20">
                                 <Label class="fa fa-edit icon-st" [text]="'fa-bullhorn' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>

@@ -21,8 +21,10 @@
                         <Label class="icon-text" textAlignment="center" VerticalAlignment="center" text="Add Product" textWrap="true"></Label>
                     </StackLayout>
                     <StackLayout orientation="horizontal" *ngIf="serviceType ==2" row="0" col="1" (tap)="addService(item.id)">
-                        <Label class="fa icon-next" [text]="'fa-plus' | fonticon"></Label>
-                        <Label text="Add Service" textWrap="true"></Label>
+                        <Label textAlignment="center" VerticalAlignment="center" class="fa icon-squre" [text]="'fa-plus' | fonticon"></Label>
+                        <Label class="icon-text" textAlignment="center" VerticalAlignment="center" text="Add Service" textWrap="true"></Label>
+                        <!-- <Label class="fa icon-next" [text]="'fa-plus' | fonticon"></Label>
+                        <Label class="icon-text" text="Add Service" textWrap="true"></Label> -->
                     </StackLayout>
                     <Label class="fa icon-st" [text]="'fa-edit' | fonticon" row="0" col="2" (tap)="editProdCat(item.id)"></Label>
                     <Label class="fa icon-next" [text]="'fa-trash' | fonticon" row="0" col="3" (tap)="deleteProductCategory(item.id)"></Label>
