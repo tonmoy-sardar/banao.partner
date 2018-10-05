@@ -14,37 +14,68 @@
                 </StackLayout>
             </CardView>
         </FlexboxLayout>
-        <GridLayout rows="auto, auto, auto, auto,auto,auto">
-            <GridLayout class="action-section" VerticalAlignment="center" row="0" rows="*" columns="40,*,40" [nsRouterLink]="['/created-app/', app_id, 'edit-app']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit App" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" *ngIf="serviceType ==1" VerticalAlignment="center" row="1" rows="*" columns="40,*,40" [nsRouterLink]="['/created-app/', app_id, 'products']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit Product" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" *ngIf="serviceType ==2" VerticalAlignment="center" row="1" rows="*" columns="40,*,40" [nsRouterLink]="['/created-app/', app_id, 'products']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit Service" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="2" [nsRouterLink]="['/created-app/', app_id, 'edit-owner-info']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit Owner Info" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="3" [nsRouterLink]="['/created-app/', app_id, 'edit-business-images']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit Business Images" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="4" [nsRouterLink]="['/created-app/', app_id, 'edit-social-media']">
-                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Edit Social Media" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
+        <GridLayout rows="*">
+            <StackLayout row="0">
+                <GridLayout columns="*,*" rows="*,*,*">
+                    <StackLayout class="action-section sec_col" padding="2" row="0" col="0">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-app']">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-edit icon-st" [text]="'fa-edit' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit App" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="0" col="1">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'products']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-folder-open icon-st" [text]="'fa-folder-open' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit Product" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="0">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'products']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-briefcase icon-st" [text]="'fa-briefcase' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit Service" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="1">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-owner-info']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-user icon-st" [text]="'fa-user' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit Owner Info" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="2" col="0">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-business-images']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-file-image-o icon-st" [text]="'fa-file-image-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit Business Images" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="2" col="1">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'edit-social-media']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-edit icon-st" [text]="'fa-bullhorn' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
+                                <Label class="action-text" text="Edit Social Media" row="0" col="1" VerticalAlignment="center"></Label>
+                            </StackLayout>
+                        </CardView>
+
+                    </StackLayout>
+
+                </GridLayout>
+            </StackLayout>
+
         </GridLayout>
+
     </StackLayout>
 </ScrollView>

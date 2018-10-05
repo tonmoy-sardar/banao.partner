@@ -17,3 +17,10 @@
     text-align: center;
     line-height: 30;
 }
+
+.action-section {
+    background: transparent !important;
+    padding: 25px;
+    margin: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

@@ -11,50 +11,96 @@
                 </StackLayout>
             </CardView>
         </FlexboxLayout>
-        <GridLayout rows="auto, auto, auto, auto,auto,auto">
-            <GridLayout class="action-section" VerticalAlignment="center" row="0" rows="*" columns="40,*,40" [nsRouterLink]="['/created-app/', app_id, 'manage-app']">
-                <Label VerticalAlignment="center" class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Manage App" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" row="1" rows="*" columns="40,*,*,40" [nsRouterLink]="['/created-app/', app_id, 'report']">
-                <Label class="fa fa-newspaper-o icon-st" [text]="'fa-newspaper-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Order Details" row="0" col="1" VerticalAlignment="center"></Label>
-                <StackLayout row="0" col="2" class="m-x-auto" *ngIf="unSeenOrder > 0">
-                    <Label [text]="unSeenOrder" textAlignment="center" VerticalAlignment="center" class="body unread" lineHeight="25"></Label>
-                </StackLayout>
+        <GridLayout rows="*">
+            <StackLayout row="0">
+                <GridLayout columns="*,*" rows="*,*,*">
+                    <StackLayout class="action-section sec_col" padding="2" row="0" col="0">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'manage-app']">
+                            <StackLayout paddingTop="20">
+                                <Label VerticalAlignment="center" class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" VerticalAlignment="center"></Label>
+
+                                <Label textAlignment="center" class="action-text" text="Manage App" row="0" col="1" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="0" col="1">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'report']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <AbsoluteLayout class="noti-full">
+                                    <Label left="67%" class="fa fa-newspaper-o icon-st" [text]="'fa-newspaper-o' | fonticon" VerticalAlignment="center"></Label>
+
+                                    <StackLayout left="90%" class="m-x-auto" *ngIf="unSeenOrder > 0">
+                                        <Label [text]="unSeenOrder" textAlignment="center" VerticalAlignment="center" class="unread-msg" lineHeight="20"></Label>
+                                    </StackLayout>
+
+                                </AbsoluteLayout>
+                                <Label textAlignment="center" class="action-text" text="Order Details" VerticalAlignment="center"></Label>
 
 
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="3" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,*,40" row="2" [nsRouterLink]="['/created-app/', app_id, 'messages']">
-                <Label class="fa fa-commenting-o icon-st" [text]="'fa-commenting-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Messages" row="0" col="1" VerticalAlignment="center"></Label>
-                <StackLayout row="0" col="2" class="m-x-auto" *ngIf="unSeenMessage > 0">
-                    <Label [text]="unSeenMessage" textAlignment="center" VerticalAlignment="center" class="body unread"></Label>
-                </StackLayout>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="3" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="3" [nsRouterLink]="['/created-app/', app_id, 'customers']">
-                <Label class="fa fa-users icon-st" [text]="'fa-users' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="My Customer" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="4" (tap)="shareApp()">
-                <Label class="fa fa-share-alt icon-st" [text]="'fa-share-alt' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Market your App" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="5" *ngIf="!app_details?.is_paid" [nsRouterLink]="['/created-app/', app_id, 'payment']">
-                <Label class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Make Payment" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
-            <GridLayout class="action-section" VerticalAlignment="center" rows="*" columns="40,*,40" row="5" *ngIf="app_details?.is_paid" [nsRouterLink]="['/created-app/', app_id, 'subscription-details']">
-                <Label class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" row="0" col="0" VerticalAlignment="center"></Label>
-                <Label class="action-text" text="Subscription Details" row="0" col="1" VerticalAlignment="center"></Label>
-                <Label class="fa fa-chevron-right icon-next" [text]="'fa-chevron-right' | fonticon" row="0" col="2" VerticalAlignment="center"></Label>
-            </GridLayout>
+
+
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="0">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'messages']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <AbsoluteLayout class="noti-full">
+
+                                    <Label left="67%" class="fa fa-commenting-o icon-st" [text]="'fa-commenting-o' | fonticon" VerticalAlignment="center"></Label>
+
+                                    <StackLayout left="90%" class="m-x-auto" *ngIf="unSeenMessage > 0">
+                                        <Label [text]="unSeenMessage" textAlignment="center" VerticalAlignment="center" class="unread-msg"></Label>
+                                    </StackLayout>
+
+                                </AbsoluteLayout>
+                                <Label textAlignment="center" class="action-text" text="Messages" VerticalAlignment="center"></Label>
+
+
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="1" col="1">
+                        <CardView class="whiteCard" [nsRouterLink]="['/created-app/', app_id, 'customers']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-users icon-st" [text]="'fa-users' | fonticon" VerticalAlignment="center"></Label>
+                                <Label textAlignment="center" class="action-text" text="My Customer" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="2" col="0">
+                        <CardView class="whiteCard" (tap)="shareApp()" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-share-alt icon-st" [text]="'fa-share-alt' | fonticon" VerticalAlignment="center"></Label>
+                                <Label textAlignment="center" class="action-text" text="Market your App" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+                    <StackLayout class="action-section sec_col" padding="2" row="2" col="1">
+                        <CardView class="whiteCard" *ngIf="!app_details?.is_paid" [nsRouterLink]="['/created-app/', app_id, 'payment']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" VerticalAlignment="center"></Label>
+                                <Label textAlignment="center" class="action-text" text="Make Payment" VerticalAlignment="center"></Label>
+                            </StackLayout>
+                        </CardView>
+                        <CardView class="whiteCard" *ngIf="app_details?.is_paid" [nsRouterLink]="['/created-app/', app_id, 'subscription-details']" VerticalAlignment="middle">
+                            <StackLayout paddingTop="20">
+                                <Label class="fa fa-building-o icon-st" [text]="'fa-building-o' | fonticon" VerticalAlignment="center"></Label>
+                                <Label textAlignment="center" class="action-text" text="Subscription Details" VerticalAlignment="center"></Label>
+
+                            </StackLayout>
+                        </CardView>
+                    </StackLayout>
+
+                </GridLayout>
+            </StackLayout>
+
         </GridLayout>
 
     </StackLayout>
